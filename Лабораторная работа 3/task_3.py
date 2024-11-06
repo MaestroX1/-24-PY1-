@@ -1,18 +1,21 @@
 # TODO  Напишите функцию count_letters
 def count_letters(text):
     count_letters_dict = {}
+    l = []
     for i in text.lower():
-        if i.isalpha() and i not in count_letters_dict:
-            count_letters_dict[i] = 1
-        elif i.isalpha() and i in count_letters_dict:
-            count_letters_dict[i] += 1
+        if i.isalpha():
+            if i not in count_letters_dict:
+                count_letters_dict[i] = 1
+            elif i in count_letters_dict:
+                count_letters_dict[i] += 1
     return count_letters_dict
-
+# Вынес проверку на букву за цикл и в следующей функции вынес вычисление суммы за цикл
 # TODO Напишите функцию calculate_frequency
 def calculate_frequency(letters_dict):
     frequency_dict = {}
+    summa = sum(letters_dict.values())
     for k, v in letters_dict.items():
-        frequency_dict[k] = v / sum(letters_dict.values())
+        frequency_dict[k] = v / summa
     return frequency_dict
 
 main_str = """
