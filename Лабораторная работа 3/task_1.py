@@ -1,8 +1,9 @@
 # TODO Напишите функцию для поиска индекса товара
 def poisk_pervogo_vhojdenia(l, tovar):
-    for i in range(len(l)):
-        if l[i] == tovar:
-            return i
+    # Переделал с использованием enumerate()
+    for pos, elem in enumerate(l):
+        if elem == tovar:
+            return pos
     else:
         return None
 
